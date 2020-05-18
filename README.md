@@ -1,14 +1,25 @@
 # AgileRetro
 A Django based Agile Retrospective board
 
-setting
-please use docker build in ./docker folder
-using mysql as database
-as in docker current using gateway id for now change as you like
-also some other database environment require your highlight and modify as your environment in Dockerfile
+## System requirement
+Database: Mysql<br/>
+Python3<br/>
+Python package required please check requirement.txt
 
-ENV DB_NAME=agileretro
-ENV DB_USER=root
-ENV DB_PWD=123456
-ENV DB_HOST=172.19.0.1
-ENV DB_PORT=3306
+## Environment parameters
+ENV DB_NAME -- schema name<br/>
+ENV DB_USER -- database name<br/>
+ENV DB_PWD -- database password<br/>
+ENV DB_HOST -- database host ( As in docker, please use the default gateway ip to access host database)<br/>
+ENV DB_PORT -- database port<br/>
+SECRET_KEY -- not using, but could not be blank, put any character will be fine<br/>
+PYTHON_ENV -- production or stagin<br/>
+
+## DockerConfig
+please use docker build in ./docker folder<br/>
+Database Related settings in Dockerfile<br/>
+ENV DB_NAME=agileretro<br/>
+ENV DB_USER=root<br/>
+ENV DB_PWD=123456<br/>
+ENV DB_HOST=172.19.0.1  -- database host ( As in docker, please use the default gateway ip to access host database)<br/>
+ENV DB_PORT -- database port<br/>
