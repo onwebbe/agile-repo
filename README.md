@@ -1,4 +1,4 @@
-# AgileRetro
+# Agile Retrospective board
 A Django based Agile Retrospective board
 
 ## System requirement
