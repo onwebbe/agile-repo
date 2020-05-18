@@ -15,8 +15,12 @@ ENV DB_PORT -- database port<br/>
 SECRET_KEY -- not using, but could not be blank, put any character will be fine<br/>
 PYTHON_ENV -- production or stagin<br/>
 
-## DockerConfig
+## Docker and DockerConfig
 please use docker build in ./docker folder<br/>
+go docker folder<br/>
+run below command to create your docker<br/>
+docker build -t agile_repo:latest .
+
 Database Related settings in Dockerfile<br/>
 ENV DB_NAME=agileretro<br/>
 ENV DB_USER=root<br/>
