@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Home</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Retro</th>
+        <th>Topics</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Last Comment</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for board in boards %}
+        <tr>
+          <td>
+            <a href="{% url 'board_topics' board.pk 9999 %}">{{ board.name }}</a>
+            <small class="text-muted d-block">{{ board.description }}</small>
+          </td>
+          <td class="align-middle">
+            {{ board.topics.count }}
+          </td>
+          <td class="align-middle">
+            {{ board.start }}
+          </td>
+          <td class="align-middle">
+            {{ board.end }}
+          </td>
+          <td class="align-middle">
+            {% with post=board.get_last_post %}
+              {% if post %}
+                <small>
+                  <a href="{% url 'topic_posts' board.pk post.topic.pk %}">
+                    <!-- By {{ post.created_by.username }} at  -->{{ post.created_at }}
+                  </a>
+                </small>
+              {% else %}
+                <small class="text-muted">
+                  <em>No comments yet.</em>
+                </small>
+              {% endif %}
+            {% endwith %}
+          </td>
+          <td class="align-middle">
+              <a href="https://confluence.successfactors.com/display/ENG/Agile+Release+Status" target="_blank">Actions</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
