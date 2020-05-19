@@ -25,5 +25,7 @@ Database Related settings in Dockerfile<br/>
 ENV DB_NAME=agileretro<br/>
 ENV DB_USER=root<br/>
 ENV DB_PWD=123456<br/>
-ENV DB_HOST=172.19.0.1  -- database host ( As in docker, please use the default gateway ip to access host database)<br/>
+ENV DB_HOST=mysql  -- database host ( As in docker, using network aliases 'mysql' to access mysql service)<br/>
 ENV DB_PORT -- database port<br/>
+
+In docker-compose file, please define your network and also add mysql as link and dependency for this image, the network aliases should be 'mysql'
