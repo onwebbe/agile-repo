@@ -1,4 +1,4 @@
-Django==3.0.6
+Django==3.0.12
 django-widget-tweaks==1.4.2
 djangorestframework==3.8.2
 Markdown==2.6.11
